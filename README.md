@@ -1,4 +1,4 @@
-#PDFPWN
+#pdfpwn
 
 AUTHOR: monty
 
@@ -19,6 +19,15 @@ USAGE:
 - Administer the target box remotely by changing the contents of "c2.txt"
 
 NOTES:
-- Changing the name of the file containing C2 commands or where it is in the directory structure will render any existing C2 connections *inoperable* until either
--- The change is reverted or
--- The setup script is re-run with the updated URL
+- Changing the name of the file containing C2 commands or where it is in the directory structure will render any existing C2 connections *inoperable* until either the change is reverted or the setup script is re-run with the updated URL
+- To parse commands, it works by file hash so you can edit the file names in the setup script to your liking
+
+HOW IT WORKS:
+- After running the setup script, a *parser* is created in the working directory
+- This parser is responsible for contacting the URL you gave it, and downloading the commands via wget
+- It then does a name change to override the old C2 commands
+- Then it creates a blank PDF file in the working directory
+- Next, it encodes the newly downloaded C2 commands and sets the output as a environment variable (in the context of the script so running env does not provide any insight into the script)
+- Then it replaces the value of metadata on a particular line in the PDF file with the encoded commands
+- Next, it calculates the MD5 hash of the PDF file containing the C2 commands and sets the value as a environment variable (also in the context of the script)
+- Finally it execute *find* to, well, find, the file containing the correct hash, parses the commands, decodes them, and pipes to shell
