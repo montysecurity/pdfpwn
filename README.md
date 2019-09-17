@@ -2,7 +2,7 @@
 
 AUTHOR: monty
 
-PURPOSE: Provide Red Team Operators and Pentesters a what to "passively" run a C2 campaign with minimal tools and interaction
+PURPOSE: Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign with minimal tools and interaction
 
 FILES:
 - README.md - ...
