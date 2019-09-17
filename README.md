@@ -31,3 +31,4 @@ HOW IT WORKS:
 - Then it replaces the value of metadata on a particular line in the PDF file with the encoded commands
 - Next, it calculates the MD5 hash of the PDF file containing the C2 commands and sets the value as a environment variable (also in the context of the script)
 - Finally it execute *find* to, well, find, the file containing the correct hash, parses the commands, decodes them, and pipes to shell
+- By default, this plays out every minute. To change this, edit the cron time at the bottom of the script. If no commands need to be executed for some time, consider changing the c2 file to something like "export TERM=xterm" or "tmp=temp && unset tmp" (or just deleting the c2 file, that will notraise any errors on the target)
