@@ -19,7 +19,7 @@ USAGE:
 - Administer the target box remotely by changing the contents of "c2.txt"
 
 NOTES:
-- Your *c2.txt* can be named anything (tested with txt files) but chhanging the name of the file containing C2 commands or where it is in the directory structure will render any existing C2 connections *inoperable* until either the change is reverted or the setup script is re-run with the updated URL
+- Your *c2.txt* can be named anything (tested with txt files) but changing the name of the file containing C2 commands or where it is in the directory structure will render any existing C2 connections *inoperable* until either the change is reverted or the setup script is re-run with the updated URL
 - To parse commands, it works by file hash so you can edit the file names in the setup script to your liking
 
 HOW IT WORKS:
