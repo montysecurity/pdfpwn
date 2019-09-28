@@ -1,5 +1,26 @@
 #!/bin/bash
 
+#Test for Dependencies
+DEP=1
+if [[ ! -f /usr/bin/convert ]];
+then
+	"[-] Dependency Missing: convert"
+	DEP=0
+elif [[ ! -f /usr/bin/base64 ]];
+then
+	"[-] Dependency Missing: base64"
+	DEP=0
+elif [[ ! -f /usr/bin/wget ]];
+then
+	"[-] Dependency Missing: wget"
+	DEP=0
+fi
+
+if [ $DEP -eq 0 ];
+then
+	exit
+fi
+
 #Input Shell Commands
 echo "[+] Input URL for Shell Commands"
 read shell
