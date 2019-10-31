@@ -9,9 +9,10 @@ Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign
 - pdfpwn.sh - ran on taget box, creates a cron that pulls and parses payload
 
 ## usage
-- Upload setup.sh to target
-- Run setup.sh (chmod +x setup.sh && ./setup.sh) and provide the full URL to the file containing the C2 commands (e.g. http://fqdn.domain.top/c2.txt)
-- Administer the target box remotely by changing the contents of "c2.txt"
+- On Attack Box
+	- pdfgen.sh
+- On Target Box
+	- pdfgen.sh
 
 ## how it works
 ### pdfgen
