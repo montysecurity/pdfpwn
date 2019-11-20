@@ -2,23 +2,22 @@
 
 if [[ ! -f /usr/bin/convert ]];
 then
-	"[-] Dependency Missing: convert"
+	echo "[-] Dependency Missing: imagemagick"
 	DEP=0
 elif [[ ! -f /usr/bin/base64 ]];
 then
-	"[-] Dependency Missing: base64"
+	echo "[-] Dependency Missing: base64"
 	DEP=0
 elif [[ ! -f /usr/bin/wget ]];
 then
-	"[-] Dependency Missing: wget"
+	echo "[-] Dependency Missing: wget"
 	DEP=0
 fi
 
-if [ $DEP -eq 0 ];
+if [[ $DEP == 0 ]];
 then
 	exit
 fi
-
 
 echo "[+] Input File Name (e.g. mal.pdf)"
 read fname
