@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#Test for Dependencies
 DEP=1
 if [[ ! -f /usr/bin/base64 ]];
 then
