@@ -40,8 +40,9 @@ Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign
 - since it downloads the file from the URL you provide, to change the commands run on the target box, simply use pdfgen to craft a PDF with the new commands and replace the one on the web server
 
 ### example
-1. run pdfgen, create a payload named 1.pdf
-2. pwn target, upload and run pdfpwn, providing the link to 1.pdf
-3. the target will download the pdf, parse and executes the commands
-4. run pdfgen, create a new payload named 1.pdf and replace the PDF on the web server
-5. target will download the new pdf and execute the new commands
+1. run tlsserver on the C2 server
+2. run pdfgen, create a payload named 1.pdf
+3. pwn target, upload and run pdfpwn, providing the link to 1.pdf (https://yourdomain/1.pdf)
+4. the target will download the pdf, parse and executes the commands
+5. run pdfgen, create a new payload named 1.pdf and replace the PDF on the web server
+6. target will download the new pdf and execute the new commands
