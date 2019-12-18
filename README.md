@@ -5,16 +5,23 @@ Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign
 
 ## files
 - README.md - ...
+- tlsserver.sh - automates creating a TLS server to encrypt payloads over the wire
 - pdfgen.sh - creates payload, move payload to webserver
 - pdfpwn.sh - creates a cron that pulls and parses payload
 
 ## usage
 - On Attack Box
+	- tlsserver.sh (one time)
 	- pdfgen.sh
 - On Target Box
 	- pdfpwn.sh
 
 ## how it works
+### tlsserver
+- updates packages
+- installs apache2 package
+- enables tls on the http server
+- reboots server
 ### pdfgen
 - checks for dependencies
 - takes desired PDF name and bash commands as imput
