@@ -6,7 +6,7 @@ then
 	exit
 fi
 
-apt update && apt install apache2
+apt update && apt install apache2 -y
 a2enmod ssl
 a2ensite default-ssl.conf
 service apache2 restart && echo -e "\e[92m[+]\e[0m TLS Server Properly Installed: /var/www/html"
