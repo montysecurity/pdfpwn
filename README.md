@@ -1,7 +1,7 @@
 # pdfpwn
 
 ## purpose
-Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign with minimal tools and interaction
+Provide Red Team Operators and Pentesters a way to run a C2 campaign with minimal tools and interaction while maximizng security and operational integrity
 
 ## files
 - README.md - ...
@@ -22,6 +22,7 @@ Provide Red Team Operators and Pentesters a way to "passively" run a C2 campaign
 - installs apache2 package
 - enables tls on the http server
 - reboots server
+
 ### pdfgen
 - checks for dependencies
 - takes desired PDF name and bash commands as imput
