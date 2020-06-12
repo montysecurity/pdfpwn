@@ -40,6 +40,12 @@ Provide Red Team Operators and Pentesters a way to run a C2 campaign with minima
 	- parses the base64 encoded commands, decodes and executes them
 - since it downloads the file from the URL you provide, to change the commands run on the target box, simply use pdfgen to craft a PDF with the new commands and replace the one on the web server
 
+## supplying custom pdfs
+the pdfgen.sh script checks the current directory for a file with the name you supply, if it exists it uses that one instead of creating one. if you want to supply a pdf with content, make sure the bottom metadata fields contain an ID field in the following format (the content in between the angle bracket pairs does not matter but the spacing does):
+```
+/ID [<ABCDEFGHIJKLMONPQRSTUVWXYZ> <ABCDEFGHIJKLMONPQRSTUVWXYZ>]
+```
+
 ### example
 1. run tlsserver on the C2 server
 2. run pdfgen, create a payload named 1.pdf
